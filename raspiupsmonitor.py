@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Raspi UPS Monitor daemon v0.0.1
+# Raspi UPS Monitor
 #
 # Michele <o-zone@zerozone.it> Pinassi
 #
@@ -18,7 +18,7 @@ from RaspiUpsMonitor.max17034 import Max17034
 
 def do_action(action):
     args = action.split()
-    if count(args) > 1:
+    if len(args) > 1:
 	argv = args[1:]
     else:
 	argv = None

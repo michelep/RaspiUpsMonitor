@@ -3,7 +3,7 @@ RaspiUpsMonitor
 
 ### a Python monitor script for Raspi UPS HAT
 
-Raspi UPS HAT was an HAT for Raspberry Pi with a battery, that act like an UPS. On board, there's a MAX17034 chip (connected to i2c bus) that could be asked for battery voltage and remaining capacity (0-100%).
+[Raspi UPS HAT](https://it.aliexpress.com/item/Geekworm-RPi-UPS-HAT-Board-for-Raspberry-Pi-3-Model-B-Pi-2B-B/32766227090.html) was a board for Raspberry Pi with a controller and a LiPo battery that act like an UPS. On board, there's a MAX17034 chip (connected to i2c bus) that could be asked for battery voltage and remaining capacity (0-100%).
 With this simple script, far to be perfect (and you are encouraged to fix and improve it !), you can shutdown safely your RPi when battery on UPS Hat reach a critical level, avoid any potentials data loss.
 
 ### Install

@@ -12,7 +12,10 @@ You need to install smbus2 with *sudo pip install smbus2*
 
 ### Install
 
-Installation is pretty simple: just do *python setup.py build* and *sudo python setup.py install*. Because script need to be run as root, sould be a great idea to launch it on boot using init.d 
+Installation is pretty simple: just do *python setup.py build* and *sudo python setup.py install*. If you want to execute as a daemon on startup, just copy raspiupsmonitor.initd to /etc/init.d and the wrapper raspiupsmonitor.sh to /usr/local/bin. Then you can use it
+as other system services with:
+
+*/etc/init.d/raspiupsmonitor [start|stop]*
 
 ### Configure
 
@@ -27,4 +30,3 @@ Configuration is in raspiupsmonitor.cfg and the relevant part is [Monitor]:
     critical_action=/sbin/halt -p
 
 "level" is the percentage of power remained, in a range from 0 to 100. When battery is discharging and reach the alert or critical level, "action" was executed.
-

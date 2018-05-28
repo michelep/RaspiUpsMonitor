@@ -1,9 +1,0 @@
-raspiupsmonitor.py
-setup.py
-RaspiUpsMonitor/__init__.py
-RaspiUpsMonitor/config.py
-RaspiUpsMonitor/max17034.py
-Raspi_UPS_HAT_Monitor.egg-info/PKG-INFO
-Raspi_UPS_HAT_Monitor.egg-info/SOURCES.txt
-Raspi_UPS_HAT_Monitor.egg-info/dependency_links.txt
-Raspi_UPS_HAT_Monitor.egg-info/top_level.txt

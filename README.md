@@ -12,14 +12,19 @@ You need to install smbus2 with *sudo pip install smbus2*
 
 ### Install
 
-Installation is pretty simple: just do *python setup.py build* and *sudo python setup.py install*. If you want to execute as a daemon on startup, just copy raspiupsmonitor.initd to /etc/init.d and the wrapper raspiupsmonitor.sh to /usr/local/bin. Then you can use it
-as other system services with:
+Installation is pretty simple: just do *python setup.py build* and *sudo python setup.py install*. If you want to execute as a daemon on startup, just copy `raspiupsmonitor.initd` to `/etc/init.d` (`cp raspiupsmonitor.initd /etc/init.d/raspiupsmonitor`, `sudo chmod +x /etc/init.d/raspiupsmonitor`, `sudo update-rc.d /etc/init.d/raspiupsmonitor defaults`) and the wrapper `raspiupsmonitor.sh` to `/usr/local/bin`. 
+Then you can use it as other system services with:
 
 */etc/init.d/raspiupsmonitor [start|stop]*
 
 ### Configure
 
-Configuration is in raspiupsmonitor.cfg and the relevant part is [Monitor]:
+Configuration is in `raspiupsmonitor.cfg` must be copied to either 
+* `/etc/raspiupsmonitor.cfg`  
+* `~/.raspiupsmonitor.cfg`
+* `raspiupsmonitor.cfg`
+
+and the relevant part is [Monitor]:
 
     [Monitor]
     # On alert level of 10%, just alert all users...

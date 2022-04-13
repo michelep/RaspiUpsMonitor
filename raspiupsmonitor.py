@@ -97,11 +97,11 @@ if __name__ == '__main__':
                 if(c < Config.critical_level):
                     # CRITICAL !!!
                     Config.log.warning("UPS Battery has reached a critical level (%d%% < %d%%)",c,Config.critical_level)
-                    do_action(Config.critical_action)
+                    os.system(Config.critical_action)
                 else:
                     # ALERT !!!
                     Config.log.warning("UPS Battery has reached alert level (%d%% < %d%%)",c,Config.alert_level)
-                    do_action(Config.alert_action)
+                    os.system(Config.alert_action)
         else:
             # No changes
             pass

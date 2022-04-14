@@ -1,29 +1,28 @@
-from smbus2 import SMBusWrapper
+from smbus2 import SMBus
 import struct 
 
-from config import Config
 
 class Max17034:
     def __init__(self,address,bus):
-	# MAX17043
-	self.address = address
-	self.i2c_bus = bus
+        # MAX17043
+        self.address = address
+        self.i2c_bus = bus
 
     def readVoltage(self):
-	with SMBusWrapper(self.i2c_bus) as bus:
-	    read = bus.read_byte_data(self.address, 2)
+        with SMBus(self.i2c_bus) as bus:
+            read = bus.read_byte_data(self.address, 2)
 
-	swapped = struct.unpack ("<H", struct.pack(">H", read))[0]
-	voltage = swapped * 78.125 / 1000000
-	return voltage
+        swapped = struct.unpack ("<H", struct.pack(">H", read))[0]
+        voltage = swapped * 78.125 / 1000000
+        return voltage
 
     def readCapacity(self):
-	with SMBusWrapper(self.i2c_bus) as bus:
-	    read = bus.read_byte_data(self.address, 4)
+        with SMBus(self.i2c_bus) as bus:
+            read = bus.read_byte_data(self.address, 4)
 
-	swapped  = struct.unpack("<H", struct.pack(">H", read))[0]
-	capacity = swapped/256
-	return capacity
+        swapped  = struct.unpack("<H", struct.pack(">H", read))[0]
+        capacity = swapped/256
+        return capacity
 
 if __name__ == '__main__':
     # 0 = /dev/i2c-0 (port I2C0)
